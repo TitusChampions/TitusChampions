@@ -3,18 +3,18 @@ Main Titus Champions Repository
 
 [Project Description]
 
-Team Members:
-Software Developers:
+## Team Members:
+### Software Developers:
 - Shamus Ellis
 - Axel Rodriguez-Leon
 - Shaina Zaccagnino
-Healthcare Specialist:
+### Healthcare Specialist:
 - Mei Morishima
-Education Specialist:
+### Education Specialist:
 - Jenn Kruszewski
-Adolescent Researcher:
+### Adolescent Researcher:
 - Lauren Fogle
-Business:
+### Business/Financial Analysts:
 - Corey Leach
 - Florian Phlepsen
 
