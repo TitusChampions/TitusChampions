@@ -3,3 +3,5 @@ function restRecovery(){
         <>hello world!</>
     )
 }
+
+export default restRecovery
