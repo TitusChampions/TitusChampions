@@ -1,7 +1,7 @@
-function restRecovery(){
+function RestRecovery(){
     return(
         <>hello world!</>
     )
 }
 
-export default restRecovery
+export default RestRecovery
