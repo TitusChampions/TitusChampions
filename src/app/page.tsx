@@ -15,16 +15,16 @@ export default function Home() {
           }}>
             Welcome to Champions!</a>
           <nav>
-          <Link href="/rest_recovery"><img src="./assets/pillar.png" alt="pillar"></img></Link>
+          <Link href="/rest_recovery"><Image src="/assets/pillar.png" alt="pillar" width="500" height="400" /></Link>
           </nav>
           <nav>
-            <Link href="/nutrition"><img src="./assets/pillar.png" alt="pillar"></img></Link>
+            <Link href="/nutrition"><Image src="/assets/pillar.png" alt="pillar" width="500" height="400" /></Link>
           </nav>
           <nav>
-            <Link href="/mental_health"><img src="./assets/pillar.png" alt="pillar"></img></Link> 
+            <Link href="/mental_health"><Image src="/assets/pillar.png" alt="pillar" width="500" height="400" /></Link> 
           </nav>
           <nav>
-            <Link href="/excercise"><img src="./assets/pillar.png" alt="pillar"></img></Link>
+            <Link href="/excercise"><Image src="/assets/pillar.png" alt="pillar" width="500" height="400" /></Link>
           </nav>
     </div>
     </div>
