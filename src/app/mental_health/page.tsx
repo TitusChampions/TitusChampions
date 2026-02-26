@@ -1,6 +1,6 @@
 function MentalHealth(){
     return(
-        <>hello world!</>
+        <div>Hello World!</div>
     )
 }
 

@@ -1,49 +1,32 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import Link from "next/link";
+import Image from "next/image";
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
+    <div style={{backgroundColor:"#E5E5E5", height:"100vh", color:"#2D77B3"}}>
+      <div>
+        <h1 style={{fontSize:"80px", fontFamily:"Helvetica"}}>CHAMPIONS</h1>
+      </div>
+     <div> 
+        <hr style={{border:"1px solid #2D77B3", width:"100%"}}></hr>
+          <a style={{fontSize:"38px", fontFamily:"figtree",display:"flex", alignItems:"center", justifyContent:"center",
+            marginTop:"20px"
+          }}>
+            Welcome to Champions!</a>
           <nav>
-          <Link href="/rest_recovery"> Rest and Recovery</Link>
+          <Link href="/rest_recovery"><img src="./assets/pillar.png" alt="pillar"></img></Link>
           </nav>
           <nav>
-            <Link href="/nutrition">Nutrition</Link>
+            <Link href="/nutrition"><img src="./assets/pillar.png" alt="pillar"></img></Link>
           </nav>
           <nav>
-            <Link href="/mental_health">Mental Health</Link> 
+            <Link href="/mental_health"><img src="./assets/pillar.png" alt="pillar"></img></Link> 
           </nav>
           <nav>
-            <Link href="/excercise">Excercise</Link>
+            <Link href="/excercise"><img src="./assets/pillar.png" alt="pillar"></img></Link>
           </nav>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
+    </div>
     </div>
   );
 }
