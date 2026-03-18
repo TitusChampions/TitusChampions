@@ -8,7 +8,7 @@ export default function Home() {
         minHeight: "100vh",
         backgroundColor: "#E5E5E5",
         color: "#2D77B3",
-        fontFamily: "figtree",
+        fontFamily: "'Figtree', sans-serif",
         display: "flex",
         flexDirection: "column",
       }}
