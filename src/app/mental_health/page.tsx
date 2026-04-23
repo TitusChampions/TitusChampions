@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, CSSProperties } from 'react';
+import Link from "next/link";
+import Image from "next/image";
 
 const affirmations = [
   "My feelings matter, and it's okay to talk about them.",
@@ -45,64 +47,126 @@ const affirmations = [
   "I believe in my ability to grow."
 ];
 
-export default function AffirmationCard() {
+function AffirmationCard() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setVisible(false);
-      
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % affirmations.length);
         setVisible(true);
-      }, 800); 
-
-    }, 6000); // Slower pace for better grounding
-
+      }, 800);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div style={{
-      maxWidth: '400px',
-      margin: '20px auto',
+      maxWidth: '500px',
+      margin: '40px auto',
       padding: '24px',
-      borderRadius: '12px',
-      backgroundColor: '#ffffff',
-      boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-      border: '1px solid #e2e8f0',
-      fontFamily: 'sans-serif'
+      borderRadius: '16px',
+      backgroundColor: '#f8fafc',
+      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+      border: '2px solid #2D77B3',
+      fontFamily: "'Figtree', sans-serif"
     }}>
       <h3 style={{
-        fontSize: '1.1rem',
-        color: '#64748b',
+        fontSize: '0.9rem',
+        color: '#2D77B3',
         marginBottom: '16px',
         textTransform: 'uppercase',
-        letterSpacing: '0.05em',
-        textAlign: 'center'
+        letterSpacing: '0.1em',
+        textAlign: 'center' as const, 
+        fontWeight: 'bold'
       }}>
-        Daily Affirmations:
+        Daily Affirmation
       </h3>
-      
-      <div style={{
-        minHeight: '80px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
+      <div style={{ minHeight: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <p style={{
           fontSize: '1.25rem',
-          textAlign: 'center',
-          color: '#0f172a',
+          textAlign: 'center' as const, 
+          color: '#1e293b',
           transition: 'opacity 0.8s ease-in-out',
           opacity: visible ? 1 : 0,
           lineHeight: '1.5',
-          margin: 0
+          margin: 0,
+          fontStyle: 'italic'
         }}>
-          {affirmations[index]}
+          "{affirmations[index]}"
         </p>
       </div>
     </div>
   );
 }
+
+export default function MentalHealth() {
+  return (
+    <div style={{ display: "flex", minHeight: "100vh", backgroundColor: "white", color: "#2D77B3", fontFamily: "'Figtree', sans-serif", flexDirection: "column" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');`}</style>
+      
+      <div style={{ display: "flex", flex: 1 }}>
+        {/* Sidebar */}
+        <div style={{ width: "150px", borderRight: "1px solid #2D77B3", padding: "2rem 1rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "2rem" }}>
+          <div style={{ width: "60px", height: "60px", backgroundColor: "#ccc", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ fontSize: "32px" }}>👤</span>
+          </div>
+          <nav style={{ display: "flex", flexDirection: "column", gap: "1.5rem", width: "100%" }}>
+            <Link href="/" style={{ color: "#2D77B3", textDecoration: "none", fontSize: "16px", textAlign: "center" }}>Home</Link>
+            <Link href="/exercise" style={{ color: "#2D77B3", textDecoration: "none", fontSize: "16px", textAlign: "center" }}>Physical Performance</Link>
+            <Link href="/nutrition" style={{ color: "#2D77B3", textDecoration: "none", fontSize: "16px", textAlign: "center" }}>Nutrition</Link>
+            <Link href="/rest_recovery" style={{ color: "#2D77B3", textDecoration: "none", fontSize: "16px", textAlign: "center" }}>Rest and Recovery</Link>
+          </nav>
+        </div>
+
+        <div style={{ flex: 1, padding: "2rem", display: "flex", flexDirection: "column" }}>
+          <h1 style={{ fontSize: "36px", color: "#2D77B3", marginBottom: "0", textAlign: "center" }}>Mental Health Pillar</h1>
+          <hr style={{ borderTop: "1px solid #2D77B3", borderBottom: "none", margin: "2rem 0", width: "100%" }} />
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, minmax(220px, 1fr))",
+            gap: "2rem",
+            maxWidth: "1000px",
+            margin: "0 auto",
+            alignContent: "start"
+          }}>
+            <Link href="/exercise_minigames" style={buttonStyle("#94C951", "150px", "1/2", "1/2")}>Outdoor Workout</Link>
+            <Link href="/exercise_minigames" style={buttonStyle("#2D77B3", "220px", "2/3", "1/2")}>Minigames!</Link>
+            <Link href="/exercise_minigames" style={buttonStyle("#94C951", "150px", "3/4", "1/2")}>Emotion Tracker</Link>
+            <Link href="/exercise_minigames" style={buttonStyle("#94C951", "150px", "1/2", "2/3")}>Affirmation Station</Link>
+            
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gridColumn: "2/3", gridRow: "2/4" }}>
+              <Image src="/assets/mascot.png" alt="Mascot" width={200} height={280} />
+            </div>
+
+            <Link href="/exercise_minigames" style={buttonStyle("#94C951", "150px", "3/4", "2/3")}>⭐ Favorites</Link>
+            <Link href="/exercise_minigames" style={buttonStyle("#94C951", "150px", "3/4", "3/4")}>Tips & Tricks</Link>
+          </div>
+
+          <AffirmationCard />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const buttonStyle = (bgColor: string, height: string, col: string, row: string): CSSProperties => ({
+  backgroundColor: bgColor,
+  padding: "2rem",
+  borderRadius: "8px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  height: height,
+  color: "white",
+  fontSize: "24px",
+  fontWeight: "bold",
+  textDecoration: "none",
+  textAlign: "center", 
+  cursor: "pointer",
+  gridColumn: col,
+  gridRow: row
+});
