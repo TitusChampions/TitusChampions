@@ -95,7 +95,7 @@ function AffirmationCard() {
           margin: 0,
           fontStyle: 'italic'
         }}>
-          "{affirmations[index]}"
+          {affirmations[index]}
         </p>
       </div>
     </div>
